@@ -1,87 +1,178 @@
-<footer class="bg-gray-900 text-gray-300 pt-20 pb-10 mt-24">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
-    <!-- Logo + mission -->
-    <div class="space-y-6">
-      <h3 class="text-2xl font-bold text-white tracking-wide">AGTPC</h3>
+<footer class="relative bg-[#1A2228] text-slate-400 pt-24 pb-12 mt-32 overflow-hidden">
+  <div
+    class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-[#82A8B8]/50 to-transparent"
+  ></div>
+  <div
+    class="absolute -bottom-24 -left-24 w-96 h-96 bg-[#82A8B8]/5 blur-[120px] rounded-full"
+  ></div>
 
-      <p class="text-gray-400 leading-relaxed">
-        Organisation dédiée à la structuration du transport des personnes et des biens, avec un
-        accent sur la sécurité, la transparence et la collaboration entre acteurs du secteur.
-      </p>
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-16">
+      <div class="space-y-8">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 bg-white rounded-lg p-1.5 shadow-lg shadow-[#82A8B8]/10">
+            <img
+              src="assets/logo/logo_agtpc.png"
+              alt="AGTPC"
+              class="w-full h-full object-contain"
+            />
+          </div>
+          <span class="text-2xl font-black text-white tracking-tighter">AGTPC</span>
+        </div>
 
-      <div class="flex gap-4 text-xl">
-        <a class="hover:text-indigo-400 transition">
-          <i class="fa-brands fa-facebook"></i>
-        </a>
-        <a class="hover:text-indigo-400 transition">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a class="hover:text-indigo-400 transition">
-          <i class="fa-brands fa-whatsapp"></i>
+        <p class="text-sm leading-relaxed italic">
+          "Assurer un système adéquat de transport au Congo afin de garantir la sécurité du milieu,
+          des conducteurs et des clients."
+        </p>
+
+        <div class="flex gap-4">
+          <a
+            class="w-10 h-10 rounded-xl bg-[#202931] border border-[#4D676E]/30 flex items-center justify-center hover:border-[#82A8B8] hover:text-[#82A8B8] transition-all duration-500 group"
+          >
+            <i class="fa-brands fa-facebook-f group-hover:scale-110"></i>
+          </a>
+          <a
+            class="w-10 h-10 rounded-xl bg-[#202931] border border-[#4D676E]/30 flex items-center justify-center hover:border-[#82A8B8] hover:text-[#82A8B8] transition-all duration-500 group"
+          >
+            <i class="fa-brands fa-linkedin-in group-hover:scale-110"></i>
+          </a>
+          <a
+            class="w-10 h-10 rounded-xl bg-[#202931] border border-[#4D676E]/30 flex items-center justify-center hover:border-[#82A8B8] hover:text-[#82A8B8] transition-all duration-500 group"
+          >
+            <i class="fa-brands fa-whatsapp group-hover:scale-110"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4
+          class="text-white font-bold uppercase tracking-widest text-xs mb-8 border-l-2 border-[#82A8B8] pl-4"
+        >
+          Navigation
+        </h4>
+        <ul class="space-y-4">
+          <li>
+            <a
+              routerLink="/"
+              class="text-sm hover:text-[#82A8B8] hover:pl-2 transition-all duration-300"
+              >Accueil</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/about"
+              class="text-sm hover:text-[#82A8B8] hover:pl-2 transition-all duration-300"
+              >Présentation</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/services"
+              class="text-sm hover:text-[#82A8B8] hover:pl-2 transition-all duration-300"
+              >Nos Services</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/realisations"
+              class="text-sm hover:text-[#82A8B8] hover:pl-2 transition-all duration-300"
+              >Réalisations</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/galerie"
+              class="text-sm hover:text-[#82A8B8] hover:pl-2 transition-all duration-300"
+              >Galerie Photos</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4
+          class="text-white font-bold uppercase tracking-widest text-xs mb-8 border-l-2 border-[#627D87] pl-4"
+        >
+          Expertise
+        </h4>
+        <ul class="space-y-4 text-sm">
+          <li class="flex items-center space-x-2">
+            <span class="w-1 h-1 bg-[#4D676E] rounded-full"></span>
+            <span>Transport & Cargo</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <span class="w-1 h-1 bg-[#4D676E] rounded-full"></span>
+            <span>Logistique & Dédouanement</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <span class="w-1 h-1 bg-[#4D676E] rounded-full"></span>
+            <span>Identification Numérique</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <span class="w-1 h-1 bg-[#4D676E] rounded-full"></span>
+            <span>Formation Auto-école</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <span class="w-1 h-1 bg-[#4D676E] rounded-full"></span>
+            <span>Audit & Aide Juridique</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="space-y-8">
+        <h4
+          class="text-white font-bold uppercase tracking-widest text-xs mb-8 border-l-2 border-[#4D676E] pl-4"
+        >
+          Contact
+        </h4>
+
+        <div class="space-y-6">
+          <div class="flex items-start space-x-4 group">
+            <div
+              class="w-8 h-8 rounded-lg bg-[#334344]/50 flex items-center justify-center text-[#82A8B8] group-hover:bg-[#82A8B8] group-hover:text-[#202931] transition-all"
+            >
+              <i class="fa-solid fa-location-dot text-xs"></i>
+            </div>
+            <div class="text-xs leading-relaxed">
+              Siège Social : Bukavu,<br />Sud-Kivu, RD Congo
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4 group">
+            <div
+              class="w-8 h-8 rounded-lg bg-[#334344]/50 flex items-center justify-center text-[#82A8B8] group-hover:bg-[#82A8B8] group-hover:text-[#202931] transition-all"
+            >
+              <i class="fa-solid fa-phone text-xs"></i>
+            </div>
+            <div class="text-xs leading-relaxed">+243 977 334 744</div>
+          </div>
+        </div>
+
+        <a
+          routerLink="/contact"
+          class="flex items-center justify-center space-x-2 w-full py-4 bg-transparent border border-[#82A8B8]/30 rounded-2xl text-[10px] uppercase font-bold tracking-[0.2em] text-[#82A8B8] hover:bg-[#82A8B8] hover:text-[#202931] transition-all duration-500 shadow-lg shadow-[#82A8B8]/5"
+        >
+          <span>Ouvrir un dossier</span>
+          <i class="fa-solid fa-arrow-right-long"></i>
         </a>
       </div>
     </div>
 
-    <!-- Navigation -->
-    <div>
-      <h4 class="text-white font-semibold mb-6">Navigation</h4>
-      <ul class="space-y-3">
-        <li><a routerLink="/" class="hover:text-white transition">Accueil</a></li>
-        <li><a routerLink="/about" class="hover:text-white transition">Présentation</a></li>
-        <li><a routerLink="/services" class="hover:text-white transition">Services</a></li>
-        <li><a routerLink="/realisations" class="hover:text-white transition">Réalisations</a></li>
-        <li><a routerLink="/galerie" class="hover:text-white transition">Galerie</a></li>
-        <li><a routerLink="/contact" class="hover:text-white transition">Contact</a></li>
-      </ul>
-    </div>
-
-    <!-- Domaines -->
-    <div>
-      <h4 class="text-white font-semibold mb-6">Domaines</h4>
-      <ul class="space-y-3 text-gray-400">
-        <li>Transport & Cargo</li>
-        <li>Logistique</li>
-        <li>Identification transporteurs</li>
-        <li>Formation conducteurs</li>
-        <li>Comptabilité & audit</li>
-        <li>Aide juridique</li>
-      </ul>
-    </div>
-
-    <!-- Contact rapide -->
-    <div>
-      <h4 class="text-white font-semibold mb-6">Contact</h4>
-
-      <div class="space-y-4 text-gray-400">
-        <p class="flex gap-3 items-start">
-          <i class="fa-solid fa-location-dot mt-1 text-indigo-400"></i>
-          Sud-Kivu — RDC
-        </p>
-
-        <p class="flex gap-3 items-start">
-          <i class="fa-solid fa-phone mt-1 text-indigo-400"></i>
-          +243 977 334 744
-        </p>
-
-        <p class="flex gap-3 items-start">
-          <i class="fa-solid fa-envelope mt-1 text-indigo-400"></i>
-          contact@agtpc.org
-        </p>
+    <div
+      class="mt-24 pt-8 border-t border-[#4D676E]/20 flex flex-col md:flex-row justify-between items-center gap-6"
+    >
+      <div class="text-[10px] uppercase tracking-widest text-slate-500">
+        © {{ year }} AGTPC — <span class="text-[#82A8B8]">Vers un transport systématisé</span>
       </div>
 
-      <a
-        routerLink="/contact"
-        class="inline-block mt-6 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl transition hover:scale-105"
-      >
-        Nous écrire
-      </a>
+      <div class="flex items-center space-x-8 text-[10px] uppercase tracking-widest font-bold">
+        <a class="hover:text-white transition-colors cursor-pointer">Confidentialité</a>
+        <a class="hover:text-white transition-colors cursor-pointer">Rapport Annuel</a>
+        <div class="flex items-center space-x-2 text-[#4D676E]">
+          <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+          <span>Système Actif</span>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <!-- ligne -->
-  <div class="border-t border-gray-800 mt-16 pt-8 text-center text-gray-500 text-sm">
-    © {{ year }} AGTPC — Tous droits réservés
-    <span class="mx-2">•</span>
-    Transport organisé & sécurisé
   </div>
 </footer>

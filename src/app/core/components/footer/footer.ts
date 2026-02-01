@@ -1,12 +1,18 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [RouterLink],
+  imports: [CommonModule, RouterModule],
   templateUrl: './footer.html',
 })
-export class Footer {
-  year = new Date().getFullYear();
+export class Footer implements OnInit {
+  // Année dynamique pour le copyright
+  year: number = new Date().getFullYear();
+
+  constructor() {}
+
+  ngOnInit(): void {}
 }

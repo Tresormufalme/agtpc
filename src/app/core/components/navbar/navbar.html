@@ -1,85 +1,112 @@
-<nav class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
+<nav
+  class="fixed top-0 left-0 w-full z-[100] transition-all duration-500"
+  [ngClass]="scrolled ? 'py-2' : 'py-6'"
+>
   <div class="max-w-7xl mx-auto px-6">
-    <div class="flex justify-between items-center h-16">
-      <!-- Logo -->
-      <a routerLink="/" class="text-2xl font-bold text-indigo-700 tracking-wide"> AGTPC </a>
+    <div class="relative group">
+      <div
+        class="absolute inset-0 bg-[#202931]/60 backdrop-blur-xl rounded-3xl border border-[#4D676E]/30 shadow-2xl transition-all duration-500 group-hover:border-[#82A8B8]/40"
+      ></div>
 
-      <!-- Desktop menu -->
-      <div class="hidden md:flex gap-8 items-center font-medium">
-        <a
-          routerLink="/"
-          routerLinkActive="text-indigo-700"
-          class="hover:text-indigo-600 transition"
-        >
-          Accueil
+      <div class="relative flex justify-between items-center h-20 px-8">
+        <a routerLink="/" class="flex items-center space-x-4 group/logo">
+          <div
+            class="relative w-12 h-12 flex items-center justify-center bg-white rounded-xl p-2 shadow-[0_0_15px_rgba(130,168,184,0.3)] group-hover/logo:scale-110 transition-transform duration-500"
+          >
+            <img
+              src="assets/logo/logo_agtpc.png"
+              alt="Logo AGTPC"
+              class="w-full h-full object-contain"
+            />
+            <div class="absolute inset-0 rounded-xl border border-[#82A8B8]/20 animate-pulse"></div>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-2xl font-black text-white tracking-tighter leading-none">AGTPC</span>
+            <span class="text-[8px] text-[#82A8B8] uppercase tracking-[0.3em] font-bold"
+              >Agence de Transport</span
+            >
+          </div>
         </a>
 
-        <a
-          routerLink="/about"
-          routerLinkActive="text-indigo-700"
-          class="hover:text-indigo-600 transition"
-        >
-          Présentation
-        </a>
+        <div class="hidden lg:flex items-center space-x-2">
+          @for (link of navLinks; track link.path) {
+            <a
+              [routerLink]="link.path"
+              routerLinkActive="bg-[#334344] text-[#82A8B8] border-[#82A8B8]/30"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="px-5 py-2 rounded-xl text-slate-300 text-xs uppercase tracking-widest font-bold border border-transparent hover:text-white hover:bg-[#334344]/50 transition-all duration-300"
+            >
+              {{ link.label }}
+            </a>
+          }
 
-        <a
-          routerLink="/services"
-          routerLinkActive="text-indigo-700"
-          class="hover:text-indigo-600 transition"
-        >
-          Services
-        </a>
+          <div class="pl-4 ml-4 border-l border-[#4D676E]/30">
+            <a
+              routerLink="/contact"
+              class="relative overflow-hidden group/btn px-8 py-3 bg-[#82A8B8] text-[#202931] rounded-xl text-xs uppercase tracking-[0.2em] font-black transition-all duration-500 hover:shadow-[0_0_20px_rgba(130,168,184,0.4)]"
+            >
+              <span class="relative z-10">Contact</span>
+              <div
+                class="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"
+              ></div>
+            </a>
+          </div>
+        </div>
 
-        <a
-          routerLink="/realisations"
-          routerLinkActive="text-indigo-700"
-          class="hover:text-indigo-600 transition"
+        <button
+          (click)="toggleMenu()"
+          class="lg:hidden relative w-10 h-10 flex items-center justify-center text-white"
         >
-          Réalisations
-        </a>
-
-        <a
-          routerLink="/galerie"
-          routerLinkActive="text-indigo-700"
-          class="hover:text-indigo-600 transition"
-        >
-          Galerie
-        </a>
-
-        <a
-          routerLink="/contact"
-          class="bg-indigo-600 text-white px-4 py-2 rounded-xl hover:scale-105 transition"
-        >
-          Contact
-        </a>
+          <div
+            class="flex flex-col justify-between w-6 h-4 transition-all duration-500"
+            [ngClass]="{ 'rotate-90': menuOpen }"
+          >
+            <span
+              class="h-[2px] w-full bg-[#82A8B8] rounded-full transition-all"
+              [ngClass]="{ 'rotate-45 translate-y-[7px]': menuOpen }"
+            ></span>
+            <span
+              class="h-[2px] w-full bg-[#82A8B8] rounded-full transition-all"
+              [ngClass]="{ 'opacity-0': menuOpen }"
+            ></span>
+            <span
+              class="h-[2px] w-full bg-[#82A8B8] rounded-full transition-all"
+              [ngClass]="{ '-rotate-45 -translate-y-[7px]': menuOpen }"
+            ></span>
+          </div>
+        </button>
       </div>
-
-      <!-- Mobile button -->
-      <button class="md:hidden text-xl" (click)="toggleMenu()">
-        <i class="fa-solid" [ngClass]="menuOpen ? 'fa-xmark' : 'fa-bars'"></i>
-      </button>
     </div>
   </div>
 
-  <!-- Mobile menu -->
-  <div *ngIf="menuOpen" class="md:hidden bg-white shadow-lg border-t">
-    <div class="flex flex-col p-6 gap-5 font-medium">
-      <a routerLink="/" (click)="closeMenu()">Accueil</a>
-      <a routerLink="/about" (click)="closeMenu()">Présentation</a>
-      <a routerLink="/services" (click)="closeMenu()">Services</a>
-      <a routerLink="/realisations" (click)="closeMenu()">Réalisations</a>
-      <a routerLink="/galerie" (click)="closeMenu()">Galerie</a>
-
+  <div
+    class="fixed inset-0 bg-[#202931]/95 backdrop-blur-2xl z-[-1] transition-all duration-700 lg:hidden"
+    [ngClass]="menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'"
+  >
+    <div class="flex flex-col items-center justify-center h-full space-y-8 px-10">
+      @for (link of navLinks; track link.path) {
+        <a
+          [routerLink]="link.path"
+          (click)="closeMenu()"
+          class="text-3xl font-bold text-white hover:text-[#82A8B8] transition-colors uppercase tracking-tighter"
+        >
+          {{ link.label }}
+        </a>
+      }
       <a
         routerLink="/contact"
         (click)="closeMenu()"
-        class="bg-indigo-600 text-white px-4 py-3 rounded-xl text-center"
+        class="w-full text-center py-5 bg-[#82A8B8] text-[#202931] rounded-2xl font-black uppercase tracking-widest"
       >
-        Contact
+        Démarrer un projet
       </a>
+
+      <div class="pt-10 border-t border-[#4D676E]/30 text-center">
+        <p class="text-[#82A8B8] text-xs uppercase tracking-widest">AGTPC Sud-Kivu</p>
+        <p class="text-slate-500 text-sm mt-2">Bukavu, RD Congo</p>
+      </div>
     </div>
   </div>
 </nav>
 
-<!-- Spacer (important for fixed navbar) -->
-<div class="h-16"></div>
+<div class="h-28"></div>
