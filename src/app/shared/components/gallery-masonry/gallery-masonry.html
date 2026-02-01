@@ -1,0 +1,15 @@
+<section class="py-24 px-6 max-w-7xl mx-auto">
+  <div class="columns-2 md:columns-3 xl:columns-4 gap-6 space-y-6">
+    <img
+  *ngFor="let img of images; let i = index"
+  [src]="'assets/gallery/thumbs/' + img"
+  loading="lazy"
+  decoding="async"
+  (click)="open(i)"
+  class="w-full rounded-2xl cursor-pointer
+         hover:scale-[1.03] transition">
+
+  </div>
+
+  <app-lightbox [images]="images"></app-lightbox>
+</section>

@@ -1,0 +1,38 @@
+<section class="relative h-screen w-full overflow-hidden">
+  <!-- Background image -->
+  <div
+    class="absolute inset-0 bg-cover bg-center scale-105 animate-[zoom_20s_linear_infinite]"
+    [ngStyle]="{ 'background-image': 'url(' + image + ')' }"
+  ></div>
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-6">
+    <h1
+      class="text-4xl md:text-6xl xl:text-7xl font-extrabold text-white leading-tight mb-6 opacity-0 translate-y-6 animate-[fadeUp_1s_ease-out_0.3s_forwards]"
+    >
+      {{ title }}
+    </h1>
+
+    <p
+      class="text-lg md:text-2xl text-gray-200 max-w-3xl mb-10 opacity-0 translate-y-6 animate-[fadeUp_1s_ease-out_0.7s_forwards]"
+    >
+      {{ subtitle }}
+    </p>
+
+    <!-- CTA -->
+    <button
+      class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-2xl text-lg font-semibold shadow-xl hover:scale-105 transition opacity-0 translate-y-6 animate-[fadeUp_1s_ease-out_1.1s_forwards]"
+    >
+      Découvrir
+      <i class="fa-solid fa-arrow-down ml-2"></i>
+    </button>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white animate-bounce">
+    <i class="fa-solid fa-angles-down text-2xl opacity-80"></i>
+  </div>
+</section>

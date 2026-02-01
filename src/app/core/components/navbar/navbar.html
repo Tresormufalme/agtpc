@@ -1,0 +1,85 @@
+<nav class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <a routerLink="/" class="text-2xl font-bold text-indigo-700 tracking-wide"> AGTPC </a>
+
+      <!-- Desktop menu -->
+      <div class="hidden md:flex gap-8 items-center font-medium">
+        <a
+          routerLink="/"
+          routerLinkActive="text-indigo-700"
+          class="hover:text-indigo-600 transition"
+        >
+          Accueil
+        </a>
+
+        <a
+          routerLink="/about"
+          routerLinkActive="text-indigo-700"
+          class="hover:text-indigo-600 transition"
+        >
+          Présentation
+        </a>
+
+        <a
+          routerLink="/services"
+          routerLinkActive="text-indigo-700"
+          class="hover:text-indigo-600 transition"
+        >
+          Services
+        </a>
+
+        <a
+          routerLink="/realisations"
+          routerLinkActive="text-indigo-700"
+          class="hover:text-indigo-600 transition"
+        >
+          Réalisations
+        </a>
+
+        <a
+          routerLink="/galerie"
+          routerLinkActive="text-indigo-700"
+          class="hover:text-indigo-600 transition"
+        >
+          Galerie
+        </a>
+
+        <a
+          routerLink="/contact"
+          class="bg-indigo-600 text-white px-4 py-2 rounded-xl hover:scale-105 transition"
+        >
+          Contact
+        </a>
+      </div>
+
+      <!-- Mobile button -->
+      <button class="md:hidden text-xl" (click)="toggleMenu()">
+        <i class="fa-solid" [ngClass]="menuOpen ? 'fa-xmark' : 'fa-bars'"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div *ngIf="menuOpen" class="md:hidden bg-white shadow-lg border-t">
+    <div class="flex flex-col p-6 gap-5 font-medium">
+      <a routerLink="/" (click)="closeMenu()">Accueil</a>
+      <a routerLink="/about" (click)="closeMenu()">Présentation</a>
+      <a routerLink="/services" (click)="closeMenu()">Services</a>
+      <a routerLink="/realisations" (click)="closeMenu()">Réalisations</a>
+      <a routerLink="/galerie" (click)="closeMenu()">Galerie</a>
+
+      <a
+        routerLink="/contact"
+        (click)="closeMenu()"
+        class="bg-indigo-600 text-white px-4 py-3 rounded-xl text-center"
+      >
+        Contact
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Spacer (important for fixed navbar) -->
+<div class="h-16"></div>

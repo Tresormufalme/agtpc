@@ -1,0 +1,18 @@
+<div *ngIf="open" class="fixed inset-0 bg-black/90 z-[100] flex items-center justify-center">
+  <button class="absolute top-6 right-6 text-white text-3xl" (click)="close()">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+
+  <button class="absolute left-6 text-white text-3xl" (click)="prev()">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+
+  <img
+    [src]="images[index]"
+    class="max-h-[90vh] max-w-[90vw] object-contain rounded-xl shadow-2xl"
+  />
+
+  <button class="absolute right-6 text-white text-3xl" (click)="next()">
+    <i class="fa-solid fa-chevron-right"></i>
+  </button>
+</div>

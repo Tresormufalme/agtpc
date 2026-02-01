@@ -1,0 +1,12 @@
+<section class="py-24 px-6 max-w-7xl mx-auto">
+  <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-10">
+    <app-card
+      *ngFor="let item of items"
+      [title]="item.title"
+      [text]="item.text"
+      [image]="item.image"
+      [icon]="item.icon"
+    >
+    </app-card>
+  </div>
+</section>
