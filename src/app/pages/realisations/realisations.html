@@ -1,15 +1,151 @@
-<app-section-title title="Réalisations" subtitle="Actions concrètes sur le terrain">
+<div
+  class="fixed inset-0 -z-10 bg-[#202931]"
+  style="background: radial-gradient(circle at bottom left, #334344, #202931)"
+>
+  <div class="absolute top-1/4 left-1/3 w-96 h-96 bg-[#82A8B8]/5 blur-[150px] animate-pulse"></div>
+</div>
+
+<app-section-title
+  title="Réalisations"
+  subtitle="Actions concrètes et impact social sur le terrain"
+  class="relative z-10"
+>
 </app-section-title>
 
-<section class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 pb-24">
-  <app-animated-image src="assets/gallery/thumbs/42.jpg"></app-animated-image>
-  <app-animated-image src="assets/gallery/thumbs/53.jpg"></app-animated-image>
-  <app-animated-image src="assets/gallery/thumbs/52.jpg"></app-animated-image>
-  <app-animated-image src="assets/gallery/thumbs/28.jpg"></app-animated-image>
-  <app-animated-image src="assets/gallery/thumbs/20.jpg"></app-animated-image>
-  <app-animated-image src="assets/gallery/thumbs/12.jpg"></app-animated-image>
-  <app-animated-image src="assets/gallery/thumbs/9.jpg"></app-animated-image>
-  <app-animated-image src="assets/gallery/thumbs/89.jpg"></app-animated-image>
-  <app-animated-image src="assets/gallery/thumbs/22.jpg"></app-animated-image>
-  <app-animated-image src="assets/gallery/thumbs/17.jpg"></app-animated-image>
+<section class="max-w-7xl mx-auto px-6 pb-32">
+  <div class="flex flex-wrap justify-center gap-4 mb-16">
+    <button
+      (click)="filterBy('all')"
+      class="px-6 py-2 rounded-full border border-[#82A8B8]/30 bg-[#334344]/50 text-[#82A8B8] hover:bg-[#82A8B8] hover:text-white transition-all duration-500 text-sm tracking-widest uppercase"
+    >
+      Tous
+    </button>
+    <button
+      (click)="filterBy('securite')"
+      class="px-6 py-2 rounded-full border border-[#4D676E]/30 bg-[#202931] text-slate-400 hover:border-[#82A8B8] transition-all text-sm tracking-widest uppercase"
+    >
+      Sécurité & Gilets
+    </button>
+    <button
+      (click)="filterBy('formation')"
+      class="px-6 py-2 rounded-full border border-[#4D676E]/30 bg-[#202931] text-slate-400 hover:border-[#82A8B8] transition-all text-sm tracking-widest uppercase"
+    >
+      Formation & Auto-écoles
+    </button>
+    <button
+      (click)="filterBy('infrastructure')"
+      class="px-6 py-2 rounded-full border border-[#4D676E]/30 bg-[#202931] text-slate-400 hover:border-[#82A8B8] transition-all text-sm tracking-widest uppercase"
+    >
+      Infrastructures
+    </button>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    @for (item of filteredRealisations; track item.id) {
+      <app-scroll-reveal>
+        <div
+          class="group relative overflow-hidden rounded-3xl bg-[#334344]/20 border border-[#4D676E]/30 hover:border-[#82A8B8]/50 transition-all duration-700 shadow-2xl"
+        >
+          <div class="relative h-80 overflow-hidden">
+            <img
+              [src]="item.src"
+              [alt]="item.title"
+              class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[1.5s] ease-out grayscale-[30%] group-hover:grayscale-0"
+            />
+
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#202931] via-transparent to-transparent opacity-80"
+            ></div>
+
+            <div
+              class="absolute top-4 left-4 px-3 py-1 rounded-lg bg-[#202931]/80 backdrop-blur-md border border-[#82A8B8]/20 text-[#82A8B8] text-[10px] uppercase tracking-tighter"
+            >
+              {{ item.categoryLabel }}
+            </div>
+          </div>
+
+          <div class="p-6 space-y-3 relative">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-bold text-white group-hover:text-[#82A8B8] transition-colors">
+                {{ item.title }}
+              </h3>
+              <i
+                class="fas {{
+                  item.icon
+                }} text-[#4D676E] group-hover:text-[#82A8B8] transition-all group-hover:rotate-12"
+              ></i>
+            </div>
+
+            <p class="text-slate-400 text-sm leading-relaxed line-clamp-2">
+              {{ item.description }}
+            </p>
+
+            <div
+              class="pt-4 mt-4 border-t border-[#4D676E]/30 flex items-center justify-between opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500"
+            >
+              <div class="text-[10px] text-[#627D87] uppercase font-mono">Impact Mesuré :</div>
+              <div class="text-[#82A8B8] font-bold text-sm">{{ item.kpi }}</div>
+            </div>
+          </div>
+
+          <div
+            class="absolute inset-0 border-2 border-transparent group-hover:border-[#82A8B8]/20 rounded-3xl pointer-events-none transition-all duration-700"
+          ></div>
+        </div>
+      </app-scroll-reveal>
+    }
+  </div>
+
+  <app-scroll-reveal>
+    <div
+      class="mt-32 p-12 rounded-[40px] bg-gradient-to-br from-[#334344]/40 to-[#202931] border border-[#4D676E]/30 relative overflow-hidden"
+    >
+      <div
+        class="absolute -right-20 -bottom-20 w-80 h-80 bg-[#82A8B8]/5 rounded-full blur-[100px]"
+      ></div>
+
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold text-white mb-6">Transformation Sociale & Économique</h2>
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div
+                class="mt-1 w-8 h-8 rounded-full bg-[#82A8B8]/10 flex items-center justify-center border border-[#82A8B8]/20"
+              >
+                <i class="fas fa-hand-holding-medical text-[#82A8B8] text-xs"></i>
+              </div>
+              <p class="text-slate-300 text-sm italic">
+                "Facilitation de l'adhésion des transporteurs aux mutuelles de santé." [cite: 61]
+              </p>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div
+                class="mt-1 w-8 h-8 rounded-full bg-[#627D87]/10 flex items-center justify-center border border-[#627D87]/20"
+              >
+                <i class="fas fa-piggy-bank text-[#627D87] text-xs"></i>
+              </div>
+              <p class="text-slate-300 text-sm italic">
+                "Création de mutuelles de solidarité et de micro-finance internes." [cite: 60, 62]
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="p-6 rounded-2xl bg-[#202931]/50 border border-[#4D676E]/20 text-center">
+            <div class="text-[#82A8B8] text-2xl font-bold">Systématisé</div>
+            <div class="text-slate-500 text-[10px] uppercase tracking-widest mt-1 text-center">
+              Transport adéquat [cite: 56]
+            </div>
+          </div>
+          <div class="p-6 rounded-2xl bg-[#202931]/50 border border-[#4D676E]/20 text-center">
+            <div class="text-[#627D87] text-2xl font-bold">Qualifié</div>
+            <div class="text-slate-500 text-[10px] uppercase tracking-widest mt-1 text-center">
+              Emploi des jeunes [cite: 57]
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </app-scroll-reveal>
 </section>

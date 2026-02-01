@@ -1,35 +1,158 @@
+<div class="fixed inset-0 -z-10 overflow-hidden">
+  <div
+    class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-[#82A8B8]/5 blur-[120px] animate-pulse"
+  ></div>
+  <div
+    class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-[#4D676E]/10 blur-[120px]"
+  ></div>
+</div>
+
 <app-hero
   title="AGTPC — Transport organisé, sécurisé et moderne"
   subtitle="Structurer, sécuriser et transformer le secteur du transport au Congo"
   image="assets/hero/hero.jpg"
+  class="relative z-10"
 >
 </app-hero>
 
 <app-scroll-reveal>
-  <app-section-title
-    title="Notre engagement"
-    subtitle="Une vision forte pour un transport fiable, humain et structuré"
-  >
-  </app-section-title>
+  <div class="py-20">
+    <app-section-title
+      title="Notre engagement"
+      subtitle="Une vision forte pour un transport fiable, humain et structuré"
+    >
+    </app-section-title>
+
+    <section class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-8 text-lg leading-relaxed">
+        <div
+          class="relative p-8 rounded-3xl bg-[#334344]/30 border border-[#4D676E]/30 backdrop-blur-md group hover:border-[#82A8B8]/50 transition-all duration-500"
+        >
+          <p class="text-slate-200">
+            [cite_start]L’AGTPC agit pour mettre de l’ordre dans le secteur du transport des
+            personnes et des biens[cite: 1, 2, 16], en [cite_start]créant une collaboration étroite
+            entre autorités, chauffeurs et clients[cite: 16, 17, 18].
+          </p>
+          <div
+            class="absolute bottom-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition-opacity"
+          >
+            <i class="fas fa-quote-right text-4xl text-[#82A8B8]"></i>
+          </div>
+        </div>
+
+        <p class="text-slate-400 pl-4 border-l-2 border-[#82A8B8]/30">
+          [cite_start]Notre approche combine organisation, sécurité, formation, identification et
+          gestion transparente [cite: 32, 34, 38, 46] [cite_start]pour construire un système durable
+          en RDC[cite: 21, 27].
+        </p>
+      </div>
+
+      <div class="grid gap-4">
+        <div
+          class="flex items-center p-6 bg-[#202931] rounded-2xl border border-[#4D676E]/20 hover:scale-105 transition-transform shadow-lg"
+        >
+          <div class="w-12 h-12 flex items-center justify-center bg-[#82A8B8]/10 rounded-full mr-4">
+            <i class="fas fa-shield-halved text-[#82A8B8]"></i>
+          </div>
+          [cite_start]<span class="text-white font-medium"
+            >Sécurité dans le milieu [cite: 11, 12]</span
+          >
+        </div>
+        <div
+          class="flex items-center p-6 bg-[#202931] rounded-2xl border border-[#4D676E]/20 hover:scale-105 transition-transform shadow-lg translate-x-4"
+        >
+          <div class="w-12 h-12 flex items-center justify-center bg-[#627D87]/10 rounded-full mr-4">
+            <i class="fas fa-user-shield text-[#627D87]"></i>
+          </div>
+          [cite_start]<span class="text-white font-medium"
+            >Sécurité des conducteurs [cite: 11, 13]</span
+          >
+        </div>
+        <div
+          class="flex items-center p-6 bg-[#202931] rounded-2xl border border-[#4D676E]/20 hover:scale-105 transition-transform shadow-lg"
+        >
+          <div class="w-12 h-12 flex items-center justify-center bg-[#4D676E]/10 rounded-full mr-4">
+            <i class="fas fa-users text-[#4D676E]"></i>
+          </div>
+          [cite_start]<span class="text-white font-medium"
+            >Sécurité des clients & biens [cite: 11, 14]</span
+          >
+        </div>
+      </div>
+    </section>
+  </div>
 </app-scroll-reveal>
 
-<section class="max-w-5xl mx-auto px-6 pb-20 text-lg text-gray-700 leading-relaxed">
-  <p>
-    L’AGTPC agit pour mettre de l’ordre dans le secteur du transport des personnes et des biens, en
-    créant une collaboration efficace entre autorités, chauffeurs et clients.
-  </p>
-  <p class="mt-6">
-    Notre approche combine organisation, sécurité, formation, identification et gestion transparente
-    pour construire un système durable.
-  </p>
+<section class="relative py-24 bg-[#202931]/50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="mb-16 flex justify-between items-end">
+      <div>
+        <h3 class="text-[#82A8B8] uppercase tracking-[0.3em] text-sm font-semibold">Expertises</h3>
+        <h2 class="text-4xl font-bold text-white mt-2">Champs d'Action</h2>
+      </div>
+      <div
+        class="hidden md:block w-1/3 h-[1px] bg-gradient-to-r from-transparent to-[#82A8B8]/50 mb-4"
+      ></div>
+    </div>
+
+    <app-scroll-reveal>
+      <app-section-cards [items]="services" class="grid-hover-effect"></app-section-cards>
+    </app-scroll-reveal>
+  </div>
 </section>
 
-<app-scroll-reveal>
-  <app-section-cards [items]="services"></app-section-cards>
-</app-scroll-reveal>
+<section class="py-20 max-w-6xl mx-auto px-6">
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+    <div
+      class="p-8 rounded-3xl bg-gradient-to-b from-[#334344]/40 to-transparent border border-[#4D676E]/20 text-center group"
+    >
+      <i
+        class="fas fa-id-card text-3xl text-[#82A8B8] mb-4 group-hover:rotate-12 transition-transform"
+      ></i>
+      [cite_start]
+      <div class="text-2xl font-bold text-white tracking-tighter">
+        Identification [cite: 32, 46]
+      </div>
+      <div class="text-[#627D87] text-sm uppercase">Systématique</div>
+    </div>
+    <div
+      class="p-8 rounded-3xl bg-gradient-to-b from-[#334344]/40 to-transparent border border-[#4D676E]/20 text-center group"
+    >
+      <i
+        class="fas fa-vest text-3xl text-[#627D87] mb-4 group-hover:rotate-12 transition-transform"
+      ></i>
+      [cite_start]
+      <div class="text-2xl font-bold text-white tracking-tighter">Gilets [cite: 33, 43]</div>
+      <div class="text-[#627D87] text-sm uppercase">Sécurisés</div>
+    </div>
+    <div
+      class="p-8 rounded-3xl bg-gradient-to-b from-[#334344]/40 to-transparent border border-[#4D676E]/20 text-center group"
+    >
+      <i
+        class="fas fa-graduation-cap text-3xl text-[#82A8B8] mb-4 group-hover:rotate-12 transition-transform"
+      ></i>
+      [cite_start]
+      <div class="text-2xl font-bold text-white tracking-tighter">Formation [cite: 34, 44]</div>
+      <div class="text-[#627D87] text-sm uppercase">Auto & Conduite</div>
+    </div>
+    <div
+      class="p-8 rounded-3xl bg-gradient-to-b from-[#334344]/40 to-transparent border border-[#4D676E]/20 text-center group"
+    >
+      <i
+        class="fas fa-database text-3xl text-[#627D87] mb-4 group-hover:rotate-12 transition-transform"
+      ></i>
+      [cite_start]
+      <div class="text-2xl font-bold text-white tracking-tighter">Base de données [cite: 47]</div>
+      <div class="text-[#627D87] text-sm uppercase">Interactive</div>
+    </div>
+  </div>
+</section>
 
-<app-cta
-  title="Construisons un transport meilleur"
-  text="Rejoignez la vision AGTPC et participez à la transformation du secteur."
->
-</app-cta>
+<div class="px-6 pb-24">
+  <app-cta
+    title="Construisons un transport meilleur"
+    text="Rejoignez la vision AGTPC et participez à la transformation du secteur."
+    class="rounded-[40px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-[#82A8B8]/20"
+  >
+  </app-cta>
+</div>

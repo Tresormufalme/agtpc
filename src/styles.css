@@ -1,6 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+
+:root {
+  --primary-dark: #202931; /* Fond principal */
+  --secondary-slate: #334344; /* Cartes et sections */
+  --accent-muted: #4d676e; /* Bordures et détails */
+  --accent-soft: #627d87; /* Interaction */
+  --light-blue: #82a8b8; /* Texte important et hover */
+  --text-main: #e0e6ed; /* Texte clair lisible */
+  --glass: rgba(255, 255, 255, 0.05);
+}
+
+body {
+  background: radial-gradient(circle at top right, #334344, #202931);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Animation d'entrée magique pour chaque section */
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @keyframes fadeUp {
   to {
     opacity: 1;
@@ -20,4 +53,3 @@
 html {
   scroll-behavior: smooth;
 }
-

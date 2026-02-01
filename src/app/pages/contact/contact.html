@@ -1,15 +1,170 @@
-<app-section-title title="Contact" subtitle="Entrons en collaboration"> </app-section-title>
+<div class="fixed inset-0 -z-10 bg-[#202931]">
+  <div
+    class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#82A8B8]/10 blur-[120px] rounded-full animate-pulse"
+  ></div>
+  <div
+    class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#4D676E]/15 blur-[120px] rounded-full"
+  ></div>
+</div>
 
-<section class="max-w-3xl mx-auto px-6 pb-24">
-  <form class="space-y-6">
-    <input placeholder="Nom" class="w-full border p-4 rounded-xl" />
+<app-section-title
+  title="Contactez l'AGTPC"
+  subtitle="Collaborons pour un transport plus sûr, structuré et moderne au Congo"
+>
+</app-section-title>
 
-    <input placeholder="Email" class="w-full border p-4 rounded-xl" />
+<section class="max-w-7xl mx-auto px-6 pb-32">
+  <div class="grid lg:grid-cols-2 gap-16 items-start">
+    <app-scroll-reveal>
+      <div class="space-y-12">
+        <div class="space-y-6">
+          <h2 class="text-3xl font-bold text-white tracking-tight">
+            Envoyez-nous un <span class="text-[#82A8B8]">message</span>
+          </h2>
+          <p class="text-slate-400 leading-relaxed">
+            Une question sur l'identification des conducteurs ? Un projet de logistique ou une
+            demande d'aide juridique ? Notre équipe vous répond sous 24h.
+          </p>
+        </div>
 
-    <textarea rows="6" placeholder="Message" class="w-full border p-4 rounded-xl"></textarea>
+        <form class="space-y-6 relative group">
+          <div
+            class="absolute -inset-1 bg-gradient-to-r from-[#82A8B8]/20 to-[#4D676E]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-100 transition duration-1000"
+          ></div>
 
-    <button class="bg-indigo-600 text-white px-8 py-4 rounded-xl w-full hover:scale-105 transition">
-      Envoyer
-    </button>
-  </form>
+          <div
+            class="relative p-8 rounded-[2rem] bg-[#334344]/30 border border-[#4D676E]/30 backdrop-blur-xl space-y-6"
+          >
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="relative group/field">
+                <i
+                  class="fas fa-user absolute left-4 top-1/2 -translate-y-1/2 text-[#4D676E] group-focus-within/field:text-[#82A8B8] transition-colors"
+                ></i>
+                <input
+                  type="text"
+                  placeholder="Votre Nom"
+                  class="w-full bg-[#202931]/50 border border-[#4D676E]/30 rounded-2xl p-4 pl-12 text-white placeholder-slate-500 outline-none focus:border-[#82A8B8]/50 focus:ring-4 focus:ring-[#82A8B8]/5 transition-all"
+                />
+              </div>
+              <div class="relative group/field">
+                <i
+                  class="fas fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-[#4D676E] group-focus-within/field:text-[#82A8B8] transition-colors"
+                ></i>
+                <input
+                  type="email"
+                  placeholder="Email Professionnel"
+                  class="w-full bg-[#202931]/50 border border-[#4D676E]/30 rounded-2xl p-4 pl-12 text-white placeholder-slate-500 outline-none focus:border-[#82A8B8]/50 focus:ring-4 focus:ring-[#82A8B8]/5 transition-all"
+                />
+              </div>
+            </div>
+
+            <div class="relative group/field">
+              <i
+                class="fas fa-tag absolute left-4 top-5 text-[#4D676E] group-focus-within/field:text-[#82A8B8] transition-colors"
+              ></i>
+              <select
+                class="w-full bg-[#202931]/50 border border-[#4D676E]/30 rounded-2xl p-4 pl-12 text-slate-400 outline-none focus:border-[#82A8B8]/50 transition-all appearance-none"
+              >
+                <option value="">Sujet de votre demande</option>
+                <option value="id">Identification & Gilets</option>
+                <option value="log">Logistique & Cargo</option>
+                <option value="jur">Aide Juridique</option>
+                <option value="oth">Autre demande</option>
+              </select>
+              <i
+                class="fas fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-[#4D676E] pointer-events-none"
+              ></i>
+            </div>
+
+            <div class="relative group/field">
+              <i
+                class="fas fa-pen-nib absolute left-4 top-5 text-[#4D676E] group-focus-within/field:text-[#82A8B8] transition-colors"
+              ></i>
+              <textarea
+                rows="5"
+                placeholder="Votre message..."
+                class="w-full bg-[#202931]/50 border border-[#4D676E]/30 rounded-2xl p-4 pl-12 text-white placeholder-slate-500 outline-none focus:border-[#82A8B8]/50 focus:ring-4 focus:ring-[#82A8B8]/5 transition-all"
+              ></textarea>
+            </div>
+
+            <button
+              class="relative overflow-hidden group/btn bg-[#82A8B8] text-[#202931] font-bold py-5 rounded-2xl w-full transition-all duration-500 hover:shadow-[0_0_30px_rgba(130,168,184,0.4)] flex items-center justify-center space-x-3"
+            >
+              <span class="relative z-10 uppercase tracking-widest text-sm"
+                >Envoyer le message</span
+              >
+              <i
+                class="fas fa-paper-plane relative z-10 group-hover/btn:translate-x-2 group-hover/btn:-translate-y-2 transition-transform duration-500"
+              ></i>
+              <div
+                class="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"
+              ></div>
+            </button>
+          </div>
+        </form>
+      </div>
+    </app-scroll-reveal>
+
+    <div class="space-y-12">
+      <app-scroll-reveal>
+        <div
+          class="relative group p-1 rounded-[2.5rem] bg-gradient-to-br from-[#4D676E]/40 to-[#82A8B8]/20"
+        >
+          <div
+            class="relative h-[450px] w-full rounded-[2.4rem] overflow-hidden grayscale-[0.8] contrast-[1.2] hover:grayscale-0 transition-all duration-1000"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127500.2458475965!2d28.8055663671875!3d-2.507485799999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x198066539958763f%3A0xc5453e9a74421685!2sBukavu!5e0!3m2!1sfr!2scd!4v1700000000000!5m2!1sfr!2scd"
+              class="absolute inset-0 w-full h-full border-0"
+              allowfullscreen=""
+              loading="lazy"
+            >
+            </iframe>
+            <div
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+            >
+              <div class="relative flex items-center justify-center">
+                <div
+                  class="absolute w-12 h-12 bg-[#82A8B8] rounded-full animate-ping opacity-20"
+                ></div>
+                <div
+                  class="relative w-6 h-6 bg-[#82A8B8] rounded-full border-4 border-white shadow-xl"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </app-scroll-reveal>
+
+      <div class="grid sm:grid-cols-2 gap-8">
+        <div
+          class="p-6 rounded-2xl bg-[#334344]/20 border border-[#4D676E]/20 flex items-start space-x-4 group hover:bg-[#334344]/40 transition-all"
+        >
+          <div
+            class="w-10 h-10 rounded-xl bg-[#202931] flex items-center justify-center border border-[#82A8B8]/30 group-hover:scale-110 transition-transform"
+          >
+            <i class="fas fa-location-dot text-[#82A8B8]"></i>
+          </div>
+          <div class="space-y-1">
+            <h4 class="text-white font-bold text-sm">Siège Social</h4>
+            <p class="text-slate-400 text-xs leading-relaxed">Bukavu, Sud-Kivu, RD Congo</p>
+          </div>
+        </div>
+
+        <div
+          class="p-6 rounded-2xl bg-[#334344]/20 border border-[#4D676E]/20 flex items-start space-x-4 group hover:bg-[#334344]/40 transition-all"
+        >
+          <div
+            class="w-10 h-10 rounded-xl bg-[#202931] flex items-center justify-center border border-[#627D87]/30 group-hover:scale-110 transition-transform"
+          >
+            <i class="fas fa-phone text-[#627D87]"></i>
+          </div>
+          <div class="space-y-1">
+            <h4 class="text-white font-bold text-sm">Contact Direct</h4>
+            <p class="text-slate-400 text-xs leading-relaxed">+243 000 000 000</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
